@@ -59,7 +59,7 @@ void Update()
     {
             case 0:
                 {
-                    Debug.Log("Budynek Biednej Pierdolonej Piechoty Czeka Na Rozkaz");
+                    Debug.Log("Budynek Biednej Piechoty Czeka Na Rozkaz");
                 }break; 
               case 1:
             {
@@ -67,7 +67,7 @@ void Update()
                     {
                         EditPosition();
                         
-                        Debug.Log(Permission + " Kurwa");
+                        Debug.Log(Permission + "Hmm Zaraza");
 
                         if (Input.GetMouseButtonUp(0) && Permission == true)
                         {
@@ -121,7 +121,7 @@ void Update()
                 } 
 
 
-            default: Debug.Log("No i chuj nie dziala"); break; //A to jest jakby coś się zjebało 
+            default: Debug.Log("No i ch nie dziala"); break; //A to jest jakby coś się zjebało 
     }
 
 }
