@@ -1,0 +1,63 @@
+﻿@model INSTAL_MIX_SQL.Models.MainPageContent
+
+@{
+    ViewBag.Title = "Dodaj Element Strony";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <link rel="Stylesheet" href="@Href("~/Content/StoreManager.css")" />
+    <div class="StoreManager">
+        <h2>Dodaj Element strony glownej</h2>
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Kontent Strony Głównej</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.opis, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.opis, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.opis, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.urlAdres, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.urlAdres, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.urlAdres, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.pozycja, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("pozycja", new List<SelectListItem>
+                        {
+                              new SelectListItem{ Text="Górna Pozycja 1", Value = "1" },
+                              new SelectListItem{ Text="Górna Pozycja 2", Value = "2" },
+                              new SelectListItem{ Text="Górna Pozycja 3", Value = "3" }
+                         })
+                        @Html.ValidationMessageFor(model => model.pozycja, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Utwórz" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Powrót do Listy", "Index")
+        </div>
+    </div>
+
+

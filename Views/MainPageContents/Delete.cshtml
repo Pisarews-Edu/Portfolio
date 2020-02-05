@@ -1,0 +1,53 @@
+﻿@model INSTAL_MIX_SQL.Models.MainPageContent
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="Stylesheet" href="@Href("~/Content/StoreManager.css")" />
+<div class="StoreManager">
+    <h2>Usuń Element</h2>
+
+    <h3>Czy jesteś pewny że chcesz usunąć ten element ?</h3>
+    <div>
+        <h4>MainPageContent</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.opis)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.opis)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.urlAdres)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.urlAdres)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.pozycja)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.pozycja)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="USUŃ" class="btn btn-default" /> |
+                @Html.ActionLink("Powrót", "Index")
+            </div>
+        }
+    </div>
+    </div> 

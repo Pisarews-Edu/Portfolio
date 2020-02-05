@@ -1,0 +1,45 @@
+﻿@model INSTAL_MIX_SQL.Models.MainPageContent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="Stylesheet" href="@Href("~/Content/StoreManager.css")" />
+<div class="StoreManager">
+    <h2>Szczegóły</h2>
+
+    <div>
+        <h4>Elementy Strony Głównej</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.opis)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.opis)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.urlAdres)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.urlAdres)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.pozycja)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.pozycja)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edycja", "Edit", new { id = Model.IdPK }) |
+        @Html.ActionLink("Powrót", "Index")
+    </p>
+    </div>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<INSTAL_MIX_SQL.Models.MainPageContent>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="Stylesheet" href="@Href("~/Content/StoreManager.css")" />
+<div class="StoreManager">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Dodaj nowy element", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.urlAdres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pozycja)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.opis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.urlAdres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pozycja)
+                </td>
+                <td>
+                    @Html.ActionLink("Edycja", "Edit", new { id = item.IdPK }) |
+                    @Html.ActionLink("Szczegóły", "Details", new { id = item.IdPK }) |
+                    @Html.ActionLink("Usuń", "Delete", new { id = item.IdPK })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
