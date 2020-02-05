@@ -1,2 +1,2 @@
 # Portfolio
-This is my project's portfolio with code sample. 
+Ceci est un portfolio d'exemple. 
