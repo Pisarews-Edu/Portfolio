@@ -1,2 +1,2 @@
 # Portfolio
-Ceci est un portfolio d'exemple. 
+Ceci est mon portfolio avec les exercices.
